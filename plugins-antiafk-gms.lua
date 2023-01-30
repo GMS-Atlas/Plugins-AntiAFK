@@ -17,13 +17,13 @@ hook.Add("Think", "HandleAFKPlayers", function()
 		
 			local afktime = ply.NextAFK
 			if (CurTime() >= afktime - AFK_WARN_TIME) and (!ply.Warning) then
-				ply:ChatPrint("Attention: Vous allez être kick pour AFK.")
+				ply:ChatPrint("Attention: Vous allez vous faire kick pour AFK.")
 				
 				ply.Warning = true
 			elseif (CurTime() >= afktime) and (ply.Warning) then
 				ply.Warning = nil
 				ply.NextAFK = nil
-				ply:Kick("Vous avez été Kick pour AFK > 30 minutes.\n")
+				ply:Kick("Vous avez ete Kick pour AFK > 30 minutes.\n")
 			end
 		end
 	end
